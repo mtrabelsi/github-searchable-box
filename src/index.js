@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Searchablebox from './searchablebox/searchablebox';
 import './index.css';
 
 ReactDOM.render(
-  <App />,
+  <Searchablebox api='the api link'/>,
   document.getElementById('root')
 );
