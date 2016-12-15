@@ -1,0 +1,26 @@
+div.child {
+ display: inline-block;
+}
+
+div.bio {
+	font-size: larger;
+    position: relative;
+    bottom: 32px;
+    left: 14px;
+}
+
+div.quote {
+  quotes: "“" "”" "‘" "’";
+}
+div.quote:before {
+    content: open-quote;
+}
+div.quote:after {
+    content: close-quote;
+}
+
+div.other {
+	position: relative;
+    left: 10px;
+    top: -5px;
+}
