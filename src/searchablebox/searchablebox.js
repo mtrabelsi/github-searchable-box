@@ -9,18 +9,18 @@ class Searchablebox extends React.Component{
 		super(props)
 		this.handleChange = this.handleChange.bind(this)
 		this.state = {
-			bio : '',
-			name : '',
-			location : '',
-			isHeUser : '',
-			avatar : ''
-		}
+			 		bio : 'no user found',
+					name : 'no user found',
+					location : 'no user found',
+					avatar : 'https://pbs.twimg.com/profile_images/616309728688238592/pBeeJQDQ.png',
+					link : ''
+			 	}
 	}
 	render(){
 		return (<div>
 					<Searchbox handleChange={this.handleChange} />
 					<Avatarbox width={100} height={100} avatarUrl={this.state.avatar} />
-					<Infobox bio={this.state.bio} name={this.state.name} location={this.state.location} isHeUser />
+					<Infobox link={this.state.link} bio={this.state.bio} name={this.state.name} location={this.state.location} isHeUser />
 				</div>
 				)
 	}
@@ -32,8 +32,17 @@ class Searchablebox extends React.Component{
 					bio : res.data.bio,
 					name : res.data.name,
 					location : res.data.location,
-					avatar : res.data.avatar_url
+					avatar : res.data.avatar_url,
+					link : res.data.html_url
 				})
+			 }).catch((err) => {
+			 	this.setState({
+			 		bio : 'no user found',
+					name : 'no user found',
+					location : 'no user found',
+					avatar : 'https://pbs.twimg.com/profile_images/616309728688238592/pBeeJQDQ.png',
+					link : ''
+			 	})
 			 })
 	}
 }
